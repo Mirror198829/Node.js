@@ -40,6 +40,48 @@ process.on('exit', function (code) {
     console.log('about to exit with code: ' + code);
 });
 ```
+## fs
+文件系统模块，负责`读写`文件
+#### 读文件
+``` javascript
+var fs = require('fs');
+fs.readFile('sample.txt', 'utf-8', function (err, data) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(data);
+    }
+});
+```
+#### 写文件
+``` javascript
+var fs = require('fs');
+var data = 'Hello, Node.js';
+fs.writeFile('output.txt', data, function (err) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log('ok.');
+    }
+});
+```
+#### stat
+获取文件大小，创建时间等信息，可以使用fs.stat()，它返回一个Stat对象，能告诉我们文件或目录的详细信息。
+``` javascript
+fs.stat('sample.txt', function (err, stat) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log('isFile: ' + stat.isFile()); // 是否是文件:  isFile: true
+        console.log('isDirectory: ' + stat.isDirectory());// 是否是目录:isDirectory: false
+        if (stat.isFile()) { 
+            console.log('size: ' + stat.size);// 文件大小: size: 181
+            console.log('birth time: ' + stat.birthtime);// 创建时间, Date对象:birth time: Fri Dec 11 2015 09:43:41 GMT+0800 (CST)
+            console.log('modified time: ' + stat.mtime);// 修改时间, Date对象:modified time: Fri Dec 11 2015 12:09:00 GMT+0800 (CST)
+        }
+    }
+}
+```
 ## 参考文档
 * 廖雪峰：https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434501497361a4e77c055f5c4a8da2d5a1868df36ad1000
 # Express框架
