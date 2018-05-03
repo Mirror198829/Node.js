@@ -1,6 +1,7 @@
 # Node.js
 ## 基本模块
 #### 全局对象 global
+##### window
 在浏览器里：全局对象为`window`。  
 在nodejs环境里：全局对象为`global`
 ``` javascript
@@ -16,6 +17,11 @@ Console {
   trace: [Function: bound trace],
   assert: [Function: bound ],
   Console: [Function: Console] }
+```
+##### __dirname
+``` javascript
+console.log(__dirname) //获取当前文件所在文件夹的路径  E：\code\Node.js
+console.log(__filename)//获取当前文件的路径   E：\code\Node.js\global.js 
 ```
 #### process
 process代表当前Node.js进程,通过process可以拿到很多有用信息
