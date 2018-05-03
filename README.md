@@ -1,7 +1,7 @@
 # Node.js
 ## 基本模块
-#### 全局对象 global
-##### window
+#### 全局对象 
+##### global
 在浏览器里：全局对象为`window`。  
 在nodejs环境里：全局对象为`global`
 ``` javascript
@@ -18,11 +18,12 @@ Console {
   assert: [Function: bound ],
   Console: [Function: Console] }
 ```
-##### __dirname
+##### __dirname  __filename
 ``` javascript
 console.log(__dirname) //获取当前文件所在文件夹的路径  E：\code\Node.js
 console.log(__filename)//获取当前文件的路径   E：\code\Node.js\global.js 
 ```
+##### setInterval setTimeout clearInterval clearTimeout
 #### process
 process代表当前Node.js进程,通过process可以拿到很多有用信息
 ``` javascript
@@ -90,4 +91,6 @@ fs.stat('sample.txt', function (err, stat) {
 ```
 ## 参考文档
 * 廖雪峰：https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434501497361a4e77c055f5c4a8da2d5a1868df36ad1000
+* 官方文档：
+http://nodejs.cn/api/timers.html#timers_clearimmediate_immediate
 # Express框架
