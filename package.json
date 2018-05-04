@@ -1,0 +1,22 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "在浏览器里：全局对象为`window`。  \r 在nodejs环境里：全局对象为`global`\r ``` javascript\r > global.console\r Console {\r   log: [Function: bound ],\r   info: [Function: bound ],\r   warn: [Function: bound ],\r   error: [Function: bound ],\r   dir: [Function: bound ],\r   time: [Function: bound ],\r   timeEnd: [Function: bound ],\r   trace: [Function: bound trace],\r   assert: [Function: bound ],\r   Console: [Function: Console] }\r ```\r ##### __dirname  __filename\r ``` javascript\r console.log(__dirname) //获取当前文件所在文件夹的路径  E：\\code\\Node.js\r console.log(__filename)//获取当前文件的路径   E：\\code\\Node.js\\global.js \r ```\r ##### setInterval setTimeout clearInterval clearTimeout\r #### process\r process代表当前Node.js进程,通过process可以拿到很多有用信息\r ``` javascript\r > process === global.process;\r true\r > process.version;\r 'v5.2.0'\r > process.platform;\r 'darwin'\r > process.arch;\r 'x64'\r > process.cwd(); //返回当前工作目录\r '/Users/michael'\r > process.chdir('/private/tmp'); // 切换当前工作目录\r undefined\r > process.cwd();\r '/private/tmp'",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mirror198829/Node.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mirror198829/Node.js/issues"
+  },
+  "homepage": "https://github.com/Mirror198829/Node.js#readme",
+  "devDependencies": {
+    "express": "^4.16.3"
+  }
+}
