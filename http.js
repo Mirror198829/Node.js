@@ -17,7 +17,7 @@ var onRequest = (req, res) => {
     // res.writeHead(200,{'Content-Type':'text/html'})
     // var myReadStream = fs.createReadStream(__dirname + '/index.html')
     // myReadStream.pipe(res)
-    
+     console.log("Request received.")
     // 主页
     if (req.url == "/") {
         res.writeHead(200, { "Content-Type": "text/html" });
