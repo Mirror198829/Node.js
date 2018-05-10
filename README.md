@@ -3,6 +3,10 @@
 * 事件驱动
 * 非阻塞I/O
 ![avatar](https://mirror198829.github.io/Node.js/img/module.png)
+## Nodejs的web服务器
+* 可以直接作为web服务器，不像php或者java这种有另外如apache、nginx、iis
+* nodejs处理请求的逻辑
+* 负责web服务器各种'配置'（配置通过代码完成，并不像php中有配置文件来完成）
 ## 基本模块
 #### 全局对象 
 ##### global
