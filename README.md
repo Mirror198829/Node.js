@@ -2,6 +2,7 @@
 ## 特点
 * 事件驱动
 * 非阻塞I/O
+![avatar](https://mirror198829.github.io/Node.js/img/module.png)
 ## 基本模块
 #### 全局对象 
 ##### global
