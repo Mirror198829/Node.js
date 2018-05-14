@@ -1,3 +1,10 @@
-let circle = require('./circle.js')
-console.log(circle.area(2))
-console.log(circle.cum(2))
+// let circle = require('./circle.js')
+// console.log(circle.area(2))
+// console.log(circle.cum(2))
+let change = require('./module.js')
+var a = 10
+change.change(a)
+// change(a)
+console.log('改变后的值'+a)
+console.log(__dirname)
+console.log(__filename)
