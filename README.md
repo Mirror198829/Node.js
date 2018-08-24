@@ -173,6 +173,15 @@ console.log(bf) //无变化：<Buffer 00 00 00 00 00>
 bf[1] = 3;
 console.log(bf) //有变化:<Buffer 00 03 00 00 00>
 ```
+* new Buffer(array)
+``` javascript
+//new Buffer(array)
+var bf = new Buffer([1,2,3])
+console.log(bf) //<Buffer 01 02 03>
+bf[10] = 10
+console.log(bf) //无变化 <Buffer 01 02 03>
+```
+
 ## 参考文档
 * 廖雪峰：https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434501497361a4e77c055f5c4a8da2d5a1868df36ad1000
 * 官方文档：
