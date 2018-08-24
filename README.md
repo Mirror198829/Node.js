@@ -7,6 +7,16 @@
 * 可以直接作为web服务器，不像php或者java这种有另外如apache、nginx、iis
 * nodejs处理请求的逻辑
 * 负责web服务器各种'配置'（配置通过代码完成，并不像php中有配置文件来完成）
+## 模块概念
+一个文件就是一个模块，每个模块都有自己的作用域  
+使用`var`声明的一个变量，并不是全局的，而是属于当前模块下  
+声明全局变量可以如下：
+``` javascript
+var a =100;
+global.a = 200;
+console.log(a); //100
+console.log(global.1);//200
+```
 ## 基本模块
 #### 全局对象 
 ##### global
@@ -29,7 +39,7 @@ Console {
 ##### __dirname  __filename
 ``` javascript
 console.log(__dirname) //获取当前文件所在文件夹的路径  E：\code\Node.js
-console.log(__filename)//获取当前文件的路径   E：\code\Node.js\global.js 
+console.log(__filename)//获取当前文件的绝对路径   E：\code\Node.js\global.js 
 ```
 ##### setInterval setTimeout clearInterval clearTimeout
 #### process
