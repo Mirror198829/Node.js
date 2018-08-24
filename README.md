@@ -20,7 +20,11 @@ console.log(global.a);//200
 ```
 #### 模块加载机制
 `require(模块)`
-
+> 路径
+``` javascript
+require('./moduleA.js') //相对路径
+require('E:/code/Node.js/moduleA.js') //绝对路径
+```
 ## 基本模块
 #### 全局对象 
 ##### global
