@@ -60,7 +60,7 @@ Module {
 ``` javascript
 //moduleA.js 子模块
 var a = 100;
-module.exports.a = a;
+module.exports.a = a; //写成exports.a = a ,但切记不要修改exports对象的引用地址
 
 //moduleDemo.js 父模块
 var data = require('./moduleA.js');//这个方法的返回值，就是被加载模块中的module.exports
