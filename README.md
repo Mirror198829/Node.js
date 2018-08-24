@@ -7,6 +7,65 @@
 * 可以直接作为web服务器，不像php或者java这种有另外如apache、nginx、iis
 * nodejs处理请求的逻辑
 * 负责web服务器各种'配置'（配置通过代码完成，并不像php中有配置文件来完成）
+## 模块概念
+#### 什么叫模块
+一个文件就是一个模块，每个模块都有自己的作用域  
+使用`var`声明的一个变量，并不是全局的，而是属于当前模块下  
+声明全局变量可以如下：
+``` javascript
+var a =100;
+global.a = 200;
+console.log(a); //100
+console.log(global.a);//200
+```
+#### 模块加载机制
+`require(模块)`
+> 路径
+``` javascript
+require('./moduleA.js') //相对路径
+require('moduleA.js') //错误！！！如果不加./就代表加载nodejs核心模块或者node_modules
+require('E:/code/Node.js/moduleA.js') //绝对路径
+```
+> 路径查找步骤
+`require('./module')`  
+1.先按照加载的模块的文件名进行查找   
+2.如果没有找到，则会在模块名称后面加上.js后缀，进行查找，这也是为什么有时会省略.js的原因  
+3.如果还没有，则会在文件名后面加上.json后缀，进行查找  
+4.如果还没有，则会在文件名后面加上.node后缀，进行查找  
+文件名称 -> .js -> .json -> .node
+#### 模块暴露exports
+module对象：保存提供和当前模块有关的一些信息  
+``` javascript
+Module {
+  id: '.',
+  exports: {},
+  parent: null,
+  filename: 'E:\\code\\Node.js\\moduleDemo.js',
+  loaded: false,
+  children:
+   [ Module {
+       id: 'E:\\code\\Node.js\\moduleA.js',
+       exports: {},
+       parent: [Circular],
+       filename: 'E:\\code\\Node.js\\moduleA.js',
+       loaded: true,
+       children: [],
+       paths: [Array] } ],
+  paths:
+   [ 'E:\\code\\Node.js\\node_modules',
+     'E:\\code\\node_modules',
+     'E:\\node_modules' ] }
+```
+其中，有一个子对象：exports对象  
+``` javascript
+//moduleA.js 子模块
+var a = 100;
+module.exports.a = a; //写成exports.a = a ,但切记不要修改exports对象的引用地址
+
+//moduleDemo.js 父模块
+var data = require('./moduleA.js');//这个方法的返回值，就是被加载模块中的module.exports
+console.log(data)   //{a:100}
+```
 ## 基本模块
 #### 全局对象 
 ##### global
@@ -29,7 +88,7 @@ Console {
 ##### __dirname  __filename
 ``` javascript
 console.log(__dirname) //获取当前文件所在文件夹的路径  E：\code\Node.js
-console.log(__filename)//获取当前文件的路径   E：\code\Node.js\global.js 
+console.log(__filename)//获取当前文件的绝对路径   E：\code\Node.js\global.js , __filename不属于全局的，只属于当前模块下的
 ```
 ##### setInterval setTimeout clearInterval clearTimeout
 #### process
