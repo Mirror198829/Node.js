@@ -56,7 +56,16 @@ Module {
      'E:\\code\\node_modules',
      'E:\\node_modules' ] }
 ```
-其中，有一个子对象：exports对象
+其中，有一个子对象：exports对象  
+``` javascript
+//moduleA.js 子模块
+var a = 100;
+module.exports.a = a;
+
+//moduleDemo.js 父模块
+var data = require('./moduleA.js');//这个方法的返回值，就是被加载模块中的module.exports
+console.log(data)   //{a:100}
+```
 ## 基本模块
 #### 全局对象 
 ##### global
