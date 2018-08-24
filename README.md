@@ -162,6 +162,17 @@ fs.stat('sample.txt', function (err, stat) {
 一个用于更好的操作二进制数据的类（全局类）
  -我们操作的文件或者网络数据，其实操作的是二进制数据流。Nodejs提供了一个Buffer更加方便的去操作数据流。  
  -类数组
+* new Buffer([size])
+``` javascript
+//创建一个buffer对象,new Buffer([size])
+//分配一个size长度的类数组，分配size的buffer长度是固定的；不能更改
+var bf = new Buffer(5)  
+console.log(bf) //<Buffer 00 00 00 00 00>
+bf[6] = 10;
+console.log(bf) //无变化：<Buffer 00 00 00 00 00>
+bf[1] = 3;
+console.log(bf) //有变化:<Buffer 00 03 00 00 00>
+```
 ## 参考文档
 * 廖雪峰：https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434501497361a4e77c055f5c4a8da2d5a1868df36ad1000
 * 官方文档：
