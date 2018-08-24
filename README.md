@@ -23,7 +23,7 @@ console.log(global.a);//200
 > 路径
 ``` javascript
 require('./moduleA.js') //相对路径
-require('moduleA.js') //错误！！！如果不加./就代表加载nodejs核心模块
+require('moduleA.js') //错误！！！如果不加./就代表加载nodejs核心模块或者node_modules
 require('E:/code/Node.js/moduleA.js') //绝对路径
 ```
 ## 基本模块
