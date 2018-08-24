@@ -181,7 +181,28 @@ console.log(bf) //<Buffer 01 02 03>
 bf[10] = 10
 console.log(bf) //无变化 <Buffer 01 02 03>
 ```
-
+* new Buffer(string,[encoding])
+``` javascript
+//new Buffer(string,[encoding]),encoding默认就是utf-8
+var bf = new Buffer('qianduan','utf-8')
+console.log(bf) //<Buffer 71 69 61 6e 64 75 61 6e>
+for(var i=0; i<bf.length;i++){  //bf.length获取的字节数
+	console.log(bf[i]) //113 105 97 110 100 117 97 110
+	console.log(bf[i].toString(16)) //71 69 61 6e 64 75 61 6e
+	console.log(String.fromCharCode(bf[i])) //q i a n d u a n
+}
+```
+* new Buffer().length
+``` javascript
+var str2 = "qianduan"
+var bf2 = new Buffer("qianduan")
+console.log(str2.length) //8
+console.log(bf2.length) //8
+var str3 = "前端"
+var bf3 = new Buffer("前端")
+console.log(str3.length) //2
+console.log(bf3.length) //6
+```
 ## 参考文档
 * 廖雪峰：https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434501497361a4e77c055f5c4a8da2d5a1868df36ad1000
 * 官方文档：
