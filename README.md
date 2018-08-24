@@ -218,6 +218,31 @@ console.log(bf) //<Buffer 00 71 69 61 6e 64 75 61>
 bf.write(str,1,3)
 console.log(bf) //<Buffer 00 71 69 61 00 00 00 00>
 ```
+``` javascript
+//buf.toString([encoding],[start],[end])
+var bf = new Buffer('qianduan')
+console.log(bf.toString())  //qianduan
+console.log(bf.toString('utf-8',1,3)) // ia
+var bf2 = new Buffer('前端')
+console.log(bf2.toString()) //前端
+console.log(bf2.toString('utf-8',1)) //��端
+
+//buf.toJSON()
+var bf3 = new Buffer('qianduan')
+console.log(bf3.toJSON()) //{ type: 'Buffer',data: [ 113, 105, 97, 110, 100, 117, 97, 110 ] }
+
+//buf.slice(start,end) 从第start开始截取到end位置
+var bf4 = new Buffer('qianduan')
+console.log(bf4.slice(2,4))  //<Buffer 61 6e>
+
+//buf.copy(targetBuffer,[targetStart],[sourceStart],[sourceEnd]) 进行buffer的拷贝
+var bf5 = new Buffer(10)
+bf4.copy(bf5)
+console.log(bf5) //<Buffer 71 69 61 6e 64 75 61 6e 00 00>
+bf5[0] = 2
+console.log(bf5) //<Buffer 02 69 61 6e 64 75 61 6e 00 00> 修改并不影响bf4
+console.log(bf4) //<Buffer 71 69 61 6e 64 75 61 6e>
+```
 ## 参考文档
 * 廖雪峰：https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434501497361a4e77c055f5c4a8da2d5a1868df36ad1000
 * 官方文档：
