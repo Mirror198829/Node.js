@@ -192,7 +192,8 @@ for(var i=0; i<bf.length;i++){  //bf.length获取的字节数
 	console.log(String.fromCharCode(bf[i])) //q i a n d u a n
 }
 ```
-* new Buffer().length
+* buf.length 
+buffer的子节大小
 ``` javascript
 var str2 = "qianduan"
 var bf2 = new Buffer("qianduan")
