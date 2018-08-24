@@ -204,6 +204,20 @@ var bf3 = new Buffer("前端")
 console.log(str3.length) //2
 console.log(bf3.length) //6
 ```
+* buf.write(string,[offset],[length],[encoding])
+``` javascript
+//buf.write(string,[offset],[length],[encoding])
+//根据参数offset偏移量和指定的encoding编码方式，将string写入buffer
+var str = 'qianduan'
+var bf = new Buffer(8)
+console.log(new Buffer(str)) //<Buffer 71 69 61 6e 64 75 61 6e>
+bf.write(str)
+console.log(bf) //<Buffer 71 69 61 6e 64 75 61 6e>
+bf.write(str,1)
+console.log(bf) //<Buffer 00 71 69 61 6e 64 75 61>
+bf.write(str,1,3)
+console.log(bf) //<Buffer 00 71 69 61 00 00 00 00>
+```
 ## 参考文档
 * 廖雪峰：https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434501497361a4e77c055f5c4a8da2d5a1868df36ad1000
 * 官方文档：
