@@ -39,7 +39,7 @@ Console {
 ##### __dirname  __filename
 ``` javascript
 console.log(__dirname) //获取当前文件所在文件夹的路径  E：\code\Node.js
-console.log(__filename)//获取当前文件的绝对路径   E：\code\Node.js\global.js 
+console.log(__filename)//获取当前文件的绝对路径   E：\code\Node.js\global.js , __filename不属于全局的，只属于当前模块下的
 ```
 ##### setInterval setTimeout clearInterval clearTimeout
 #### process
