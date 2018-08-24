@@ -33,7 +33,30 @@ require('E:/code/Node.js/moduleA.js') //绝对路径
 3.如果还没有，则会在文件名后面加上.json后缀，进行查找  
 4.如果还没有，则会在文件名后面加上.node后缀，进行查找  
 文件名称 -> .js -> .json -> .node
-
+#### 模块暴露exports
+module对象：保存提供和当前模块有关的一些信息  
+``` javascript
+Module {
+  id: '.',
+  exports: {},
+  parent: null,
+  filename: 'E:\\code\\Node.js\\moduleDemo.js',
+  loaded: false,
+  children:
+   [ Module {
+       id: 'E:\\code\\Node.js\\moduleA.js',
+       exports: {},
+       parent: [Circular],
+       filename: 'E:\\code\\Node.js\\moduleA.js',
+       loaded: true,
+       children: [],
+       paths: [Array] } ],
+  paths:
+   [ 'E:\\code\\Node.js\\node_modules',
+     'E:\\code\\node_modules',
+     'E:\\node_modules' ] }
+```
+其中，有一个子对象：exports对象
 ## 基本模块
 #### 全局对象 
 ##### global
