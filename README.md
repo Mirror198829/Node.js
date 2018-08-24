@@ -158,6 +158,10 @@ fs.stat('sample.txt', function (err, stat) {
 ```
 #### 流和管道
 流的作用：1.提高性能 2.处理数据
+## Buffer类
+一个用于更好的操作二进制数据的类（全局类）
+ -我们操作的文件或者网络数据，其实操作的是二进制数据流。Nodejs提供了一个Buffer更加方便的去操作数据流。  
+ -类数组
 ## 参考文档
 * 廖雪峰：https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434501497361a4e77c055f5c4a8da2d5a1868df36ad1000
 * 官方文档：
