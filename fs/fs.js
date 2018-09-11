@@ -45,5 +45,30 @@ fs.readFile('cloud.png', function (err, data) {
         console.log(data.length + ' bytes');
     }
 });
-
+//删除文件
+// fs.unlink('2.txt',function(err){
+//     if(err){
+//         console.log('删除失败')
+//     }else{
+//         console.log('删除成功')
+//     }
+// })
 fs.writeFileSync('write.txt','write!!!!!!!')
+//重命名
+// fs.rename('write.txt','write.new.txt',()=>{
+//     console.log(arguments)
+// })
+//查看文件状态
+// fs.stat('write.txt',()=>{
+//     console.log(1231313132)
+//     console.log(arguments)
+// })
+//监听文件变化
+fs.watch('write.txt',(ev,fn)=>{
+    console.log(ev)
+    if(fn){
+        console.log(`${fn}发生了改变`)
+    }else{
+        console.log('....')
+    }
+})
