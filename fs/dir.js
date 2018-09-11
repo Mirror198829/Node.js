@@ -17,7 +17,6 @@ fs.readdir('./fileSys',(err,fileLst)=>{
 })
 //fs.rmdir(path,callback)删除文件架
 //fs.rmdirSync(path)
-/*fs.rmdir('./1',()=>{
-	console.log(arguments)
-})
-*/
+// fs.rmdir('./1',()=>{
+// 	console.log(arguments)
+// })
