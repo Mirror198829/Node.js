@@ -248,3 +248,6 @@ console.log(bf4) //<Buffer 71 69 61 6e 64 75 61 6e>
 * 官方文档：
 http://nodejs.cn/api/timers.html#timers_clearimmediate_immediate
 # Express框架
+## 中间件
+### body-parser
+用来处理post请求数据
