@@ -251,3 +251,7 @@ http://nodejs.cn/api/timers.html#timers_clearimmediate_immediate
 ## 中间件
 ### body-parser
 用来处理post请求数据
+### 路由传参
+参考：https://www.cnblogs.com/wteam-xq/p/4316832.html  
+
+
